@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>For Ritumonnnn ♡</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+  margin:0;
+  width:100%;
+  min-height:100%;
+}
+
+body{
+  overflow-x:hidden;
+  color:#4b2939;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,#fff 0,transparent 30%),
+    radial-gradient(circle at 90% 20%,#ffd9e8 0,transparent 35%),
+    linear-gradient(135deg,#fffafd,#fce6ef 50%,#f3d4e5);
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at 20% 75%,rgba(255,255,255,.5),transparent 20%),
+    radial-gradient(circle at 80% 85%,rgba(255,255,255,.4),transparent 25%);
+}
+
+/* FLOATING HEARTS */
+
+.ambient{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+
+.heart{
+  position:absolute;
+  bottom:-60px;
+  opacity:.22;
+  font-size:22px;
+  animation:heartFloat 14s linear infinite;
+}
+
+.heart:nth-child(1){left:8%;animation-delay:-3s}
+.heart:nth-child(2){left:25%;animation-delay:-9s;font-size:15px}
+.heart:nth-child(3){left:43%;animation-delay:-5s;font-size:27px}
+.heart:nth-child(4){left:62%;animation-delay:-12s;font-size:17px}
+.heart:nth-child(5){left:78%;animation-delay:-7s;font-size:25px}
+.heart:nth-child(6){left:91%;animation-delay:-10s;font-size:15px}
+
+@keyframes heartFloat{
+  0%{transform:translateY(0);opacity:0}
+  15%{opacity:.22}
+  50%{transform:translateY(-55vh) translateX(20px) rotate(15deg)}
+  100%{transform:translateY(-115vh) translateX(-15px) rotate(-15deg);opacity:0}
+}
+
+/* PAGE */
+
+.page{
+  width:100%;
+  min-height:100vh;
+  min-height:100svh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:28px 16px;
+  position:relative;
+  z-index:5;
+}
+
+.page-inner{
+  width:min(94vw,720px);
+  text-align:center;
+}
+
+.card{
+  width:100%;
+  padding:clamp(28px,7vw,55px);
+  border-radius:32px;
+  background:rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 30px 90px rgba(110,40,80,.13);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+/* TYPOGRAPHY */
+
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#967280;
+  margin-bottom:20px;
+}
+
+h1,h2{
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+.hero{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(54px,15vw,120px);
+  line-height:.9;
+  letter-spacing:-.065em;
+  color:#bf2867;
+  white-space:nowrap;
+}
+
+.subtitle{
+  font-size:clamp(19px,5vw,28px);
+  margin:28px 0 0;
+}
+
+.copy{
+  max-width:570px;
+  margin:20px auto 0;
+  font-size:clamp(17px,4.5vw,22px);
+  line-height:1.55;
+  color:#654453;
+}
+
+/* BUTTON */
+
+.btn{
+  border:0;
+  min-height:58px;
+  min-width:215px;
+  padding:16px 28px;
+  margin-top:32px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#d32d73,#ad185a);
+  color:white;
+  font-size:17px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(180,30,90,.25);
+}
+
+.btn:active{
+  transform:scale(.96);
+}
+
+.btn.light{
+  background:rgba(255,255,255,.75);
+  color:#ae205e;
+}
+
+/* TEDDY */
+
+.teddy{
+  position:absolute;
+  right:15px;
+  top:15px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#c48a71;
+  box-shadow:-10px -6px 0 -2px #c48a71,10px -6px 0 -2px #c48a71;
+}
+
+.teddy:before{
+  content:"";
+  position:absolute;
+  left:9px;
+  top:16px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#4b2939;
+  box-shadow:18px 0 #4b2939;
+}
+
+.teddy:after{
+  content:"";
+  position:absolute;
+  left:16px;
+  top:25px;
+  width:10px;
+  height:7px;
+  border-radius:0 0 10px 10px;
+  background:#f3d4c4;
+}
+
+/* BALLOONS */
+
+.balloon-area{
+  position:relative;
+  width:min(94vw,650px);
+  height:520px;
+  margin:15px auto 0;
+}
+
+.balloon-wrap{
+  position:absolute;
+  width:90px;
+  height:180px;
+  cursor:pointer;
+  animation:balloonFloat 4.5s ease-in-out infinite;
+}
+
+.balloon-wrap:nth-child(1){left:2%;top:25%;animation-delay:-.5s}
+.balloon-wrap:nth-child(2){left:23%;top:4%;animation-delay:-2s}
+.balloon-wrap:nth-child(3){left:44%;top:27%;animation-delay:-1s}
+.balloon-wrap:nth-child(4){left:65%;top:5%;animation-delay:-3s}
+.balloon-wrap:nth-child(5){left:80%;top:38%;animation-delay:-1.7s}
+
+@keyframes balloonFloat{
+  0%,100%{transform:translateY(0) rotate(-2deg)}
+  50%{transform:translateY(-22px) rotate(3deg)}
+}
+
+.balloon{
+  position:absolute;
+  left:50%;
+  top:8px;
+  width:78px;
+  height:100px;
+  transform:translateX(-50%);
+  border-radius:50% 50% 48% 48% / 56% 56% 43% 43%;
+  box-shadow:inset -14px -10px 20px rgba(0,0,0,.08),inset 12px 8px 18px rgba(255,255,255,.3),0 15px 25px rgba(80,30,60,.12);
+}
+
+.balloon:before{
+  content:"";
+  position:absolute;
+  left:15px;
+  top:13px;
+  width:22px;
+  height:13px;
+  border-radius:50%;
+  background:rgba(255,255,255,.42);
+  transform:rotate(-28deg);
+}
+
+.balloon:after{
+  content:"";
+  position:absolute;
+  bottom:-9px;
+  left:50%;
+  transform:translateX(-50%);
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-top:11px solid currentColor;
+}
+
+.balloon-wrap:nth-child(1) .balloon{background:#d72d70;color:#d72d70}
+.balloon-wrap:nth-child(2) .balloon{background:#e66e98;color:#e66e98}
+.balloon-wrap:nth-child(3) .balloon{background:#ad61c8;color:#ad61c8}
+.balloon-wrap:nth-child(4) .balloon{background:#e88880;color:#e88880}
+.balloon-wrap:nth-child(5) .balloon{background:#c950a1;color:#c950a1}
+
+.balloon-text{
+  position:absolute;
+  top:44px;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-size:11px;
+  font-weight:800;
+  text-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+
+.string{
+  position:absolute;
+  left:50%;
+  top:108px;
+  width:1px;
+  height:55px;
+  background:rgba(80,40,60,.3);
+}
+
+.message{
+  position:absolute;
+  left:50%;
+  top:-10px;
+  width:205px;
+  padding:13px 14px;
+  transform:translate(-50%,15px) scale(.65);
+  opacity:0;
+  border-radius:17px;
+  background:white;
+  color:#68394e;
+  font-size:13px;
+  line-height:1.35;
+  font-weight:600;
+  box-shadow:0 15px 40px rgba(80,30,60,.18);
+  pointer-events:none;
+  z-index:20;
+  transition:.35s ease;
+}
+
+.balloon-wrap.popped{
+  animation:none;
+}
+
+.balloon-wrap.popped .balloon{
+  transform:translateX(-50%) scale(.02);
+  opacity:0;
+  transition:.22s ease;
+}
+
+.balloon-wrap.popped .string{
+  opacity:0;
+}
+
+.balloon-wrap.popped .message{
+  opacity:1;
+  transform:translate(-50%,-10px) scale(1);
+}
+
+.balloon-wrap.popped .particle{
+  animation:burst .7s ease-out forwards;
+}
+
+.particle{
+  position:absolute;
+  left:50%;
+  top:55px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#d02d73;
+  opacity:0;
+}
+
+.p1{--x:-70px;--y:-60px}
+.p2{--x:70px;--y:-50px}
+.p3{--x:-85px;--y:15px}
+.p4{--x:85px;--y:20px}
+.p5{--x:-40px;--y:70px}
+.p6{--x:45px;--y:75px}
+
+@keyframes burst{
+  0%{
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+  100%{
+    opacity:0;
+    transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y)));
+  }
+}
+
+/* CAKE */
+
+.sequence{
+  min-height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(23px,6vw,35px);
+  color:#b52263;
+}
+
+.cake{
+  position:relative;
+  width:250px;
+  height:245px;
+  margin:10px auto;
+}
+
+.plate{
+  position:absolute;
+  bottom:8px;
+  left:50%;
+  width:270px;
+  height:25px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:#f9edf3;
+  box-shadow:0 10px 25px rgba(80,30,60,.12);
+}
+
+.cake-body{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  width:220px;
+  height:88px;
+  transform:translateX(-50%);
+  border-radius:18px 18px 25px 25px;
+  background:linear-gradient(#d77b9c 0 18px,#f2c2d4 18px);
+}
+
+.cake-top{
+  position:absolute;
+  bottom:98px;
+  left:50%;
+  width:220px;
+  height:55px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:#fff0f5;
+}
+
+.number{
+  position:absolute;
+  bottom:62px;
+  left:50%;
+  transform:translateX(-50%);
+  font:700 65px Georgia,"Times New Roman",serif;
+  color:#b92363;
+  z-index:5;
+}
+
+.candle{
+  position:absolute;
+  bottom:135px;
+  width:16px;
+  height:58px;
+  border-radius:5px;
+  background:repeating-linear-gradient(135deg,#fff 0 7px,#e784a6 7px 13px);
+}
+
+.candle:nth-of-type(1){left:72px}
+.candle:nth-of-type(2){left:117px}
+.candle:nth-of-type(3){left:162px}
+
+.flame{
+  position:absolute;
+  left:50%;
+  top:-28px;
+  width:17px;
+  height:27px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(circle at 50% 65%,#fff 0 18%,#ffd66e 19% 45%,#ff9a3d 46% 75%,transparent 76%);
+  filter:drop-shadow(0 0 9px rgba(255,161,54,.7));
+  animation:flicker .8s infinite alternate;
+}
+
+@keyframes flicker{
+  from{transform:translateX(-50%) scale(1) rotate(-3deg)}
+  to{transform:translateX(-50%) scale(.9,1.08) rotate(3deg)}
+}
+
+.candle.out .flame{
+  opacity:0!important;
+  animation:none;
+}
+
+.slider{
+  width:100%;
+  max-width:430px;
+  accent-color:#c72568;
+}
+
+.slider-label{
+  max-width:430px;
+  margin:15px auto 7px;
+  display:flex;
+  justify-content:space-between;
+  color:#927080;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* GIFT */
+
+.gifts{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  margin:25px 0;
+}
+
+.sunflower{
+  position:relative;
+  width:145px;
+  height:145px;
+  animation:sway 3s ease-in-out infinite;
+}
+
+@keyframes sway{
+  50%{transform:rotate(4deg)}
+}
+
+.petal{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:40px;
+  height:68px;
+  margin-left:-20px;
+  margin-top:-62px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffda69,#e9a52f);
+  transform-origin:50% 100%;
+}
+
+.petal:nth-child(1){transform:rotate(0) translateY(-30px)}
+.petal:nth-child(2){transform:rotate(45deg) translateY(-30px)}
+.petal:nth-child(3){transform:rotate(90deg) translateY(-30px)}
+.petal:nth-child(4){transform:rotate(135deg) translateY(-30px)}
+.petal:nth-child(5){transform:rotate(180deg) translateY(-30px)}
+.petal:nth-child(6){transform:rotate(225deg) translateY(-30px)}
+.petal:nth-child(7){transform:rotate(270deg) translateY(-30px)}
+.petal:nth-child(8){transform:rotate(315deg) translateY(-30px)}
+
+.flower-center{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:58px;
+  height:58px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,#6c391d 0 30%,#3e1f0d);
+}
+
+.stem{
+  position:absolute;
+  left:50%;
+  top:128px;
+  width:8px;
+  height:75px;
+  background:#56854b;
+  transform:translateX(-50%);
+  border-radius:8px;
+}
+
+.kitkat{
+  width:115px;
+  height:160px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#e42d33,#b91019);
+  position:relative;
+  box-shadow:0 18px 35px rgba(90,25,30,.2);
+}
+
+.kitkat-title{
+  position:absolute;
+  top:18px;
+  left:12px;
+  right:12px;
+  padding:10px 3px;
+  border-radius:8px;
+  background:#fff4ed;
+  color:#c51d27;
+  font:bold 15px Georgia;
+}
+
+.kitkat-bars{
+  position:absolute;
+  left:15px;
+  right:15px;
+  bottom:15px;
+  display:flex;
+  gap:6px;
+}
+
+.kitkat-bars span{
+  flex:1;
+  height:80px;
+  border-radius:5px;
+  background:linear-gradient(90deg,#e1b99e,#fff0dc,#c99a7c);
+}
+
+/* LETTER */
+
+.letter{
+  text-align:left;
+  padding:clamp(27px,7vw,54px);
+  border-radius:30px;
+  background:rgba(255,250,252,.76);
+  border:1px solid white;
+  box-shadow:0 30px 80px rgba(110,45,80,.12);
+  position:relative;
+}
+
+.letter h2{
+  color:#b52263;
+  font-size:clamp(34px,9vw,58px);
+}
+
+.letter p{
+  font:clamp(17px,4.5vw,21px)/1.8 Georgia,"Times New Roman",serif;
+  color:#563543;
+}
+
+.signature{
+  font:24px Georgia;
+  color:#b52263;
+  margin-top:30px;
+}
+
+/* FINAL */
+
+.final-title{
+  font:clamp(48px,12vw,90px)/1 Georgia,"Times New Roman",serif;
+  color:#b52263;
+}
+
+.big-heart{
+  font-size:55px;
+  animation:beat 1.2s infinite;
+}
+
+@keyframes beat{
+  50%{transform:scale(1.18)}
+}
+
+/* CONFETTI */
+
+#confetti{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:100;
+  overflow:hidden;
+}
+
+.conf{
+  position:absolute;
+  top:-20px;
+  font-size:13px;
+  animation:fall 2.6s ease-out forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) translateX(var(--x)) rotate(600deg);
+    opacity:0;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .hero{
+    font-size:clamp(51px,15vw,90px);
+  }
+
+  .balloon-area{
+    height:500px;
+  }
+
+  .balloon-wrap{
+    width:75px;
+  }
+
+  .balloon{
+    width:70px;
+    height:92px;
+  }
+
+  .balloon-text{
+    top:40px;
+    font-size:10px;
+  }
+
+  .string{
+    top:100px;
+  }
+
+  .balloon-wrap:nth-child(1){left:0}
+  .balloon-wrap:nth-child(2){left:22%}
+  .balloon-wrap:nth-child(3){left:44%}
+  .balloon-wrap:nth-child(4){left:66%}
+  .balloon-wrap:nth-child(5){left:78%;top:42%}
+
+  .gifts{
+    gap:8px;
+  }
+
+  .sunflower{
+    transform:scale(.82);
+    margin-right:-10px;
+  }
+
+  .kitkat{
+    transform:scale(.82);
+    margin-left:-10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient">
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+</div>
+
+<!-- HOME -->
+<section id="home" class="page" style="display:flex">
+  <div class="page-inner">
+
+    <div class="eyebrow">A TINY BIRTHDAY SURPRISE</div>
+
+    <h1 class="hero">Ritumonnnn</h1>
+
+    <div class="subtitle">
+      my bandi, my baccha, my pataka ♡
+    </div>
+
+    <div class="copy">
+      Rita Roy is officially 23 today.
+    </div>
+
+    <button class="btn" onclick="showPage('balloons')">
+      Open your surprise
+    </button>
+
+  </div>
+</section>
+
+
+<!-- BALLOONS -->
+<section id="balloons" class="page">
+  <div class="page-inner">
+    <div class="card" style="position:relative">
+
+      <div class="teddy"></div>
+
+      <div class="eyebrow">
+        FIVE LITTLE THINGS FOR YOU
+      </div>
+
+      <div style="font-size:13px;color:#967280">
+        Tap every balloon
+      </div>
+
+      <div class="balloon-area">
+
+        <div class="balloon-wrap" onclick="pop(this)">
+          <div class="balloon"><div class="balloon-text">for you ♡</div></div>
+          <div class="string"></div>
+          <div class="message">You make ordinary days feel a little less ordinary.</div>
+          <i class="particle p1"></i><i class="particle p2"></i>
+          <i class="particle p3"></i><i class="particle p4"></i>
+          <i class="particle p5"></i><i class="particle p6"></i>
+        </div>
+
+        <div class="balloon-wrap" onclick="pop(this)">
+          <div class="balloon"><div class="balloon-text">pretty girl</div></div>
+          <div class="string"></div>
+          <div class="message">You somehow manage to be cute, chaotic and beautiful at the same time.</div>
+          <i class="particle p1"></i><i class="particle p2"></i>
+          <i class="particle p3"></i><i class="particle p4"></i>
+          <i class="particle p5"></i><i class="particle p6"></i>
+        </div>
+
+        <div class="balloon-wrap" onclick="pop(this)">
+          <div class="balloon"><div class="balloon-text">my baccha</div></div>
+          <div class="string"></div>
+          <div class="message">I hope 23 brings you more reasons to smile than you can count.</div>
+          <i class="particle p1"></i><i class="particle p2"></i>
+          <i class="particle p3"></i><i class="particle p4"></i>
+          <i class="particle p5"></i><i class="particle p6"></i>
+        </div>
+
+        <div class="balloon-wrap" onclick="pop(this)">
+          <div class="balloon"><div class="balloon-text">meri pataka</div></div>
+          <div class="string"></div>
+          <div class="message">And yes, you still have absolutely no idea how pretty you are.</div>
+          <i class="particle p1"></i><i class="particle p2"></i>
+          <i class="particle p3"></i><i class="particle p4"></i>
+          <i class="particle p5"></i><i class="particle p6"></i>
+        </div>
+
+        <div class="balloon-wrap" onclick="pop(this)">
+          <div class="balloon"><div class="balloon-text">last one ♡</div></div>
+          <div class="string"></div>
+          <div class="message">Happy 23rd, Ritumonnnn. Now let's get to your cake.</div>
+          <i class="particle p1"></i><i class="particle p2"></i>
+          <i class="particle p3"></i><i class="particle p4"></i>
+          <i class="particle p5"></i><i class="particle p6"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CAKE -->
+<section id="cake" class="page">
+  <div class="page-inner">
+
+    <div class="card" style="position:relative">
+
+      <div class="teddy"></div>
+
+      <div id="sequence" class="sequence">
+        OIYEE...
+      </div>
+
+      <div class="cake">
+
+        <div class="plate"></div>
+        <div class="cake-body"></div>
+        <div class="cake-top"></div>
+
+        <div class="number">23</div>
+
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+          <div class="flame"></div>
+        </div>
+
+      </div>
+
+      <div class="copy">
+        Close your eyes and make your wish.<br>
+        <strong>No cheating.</strong> Mai drone se dekh rha hu. 👀
+      </div>
+
+      <div class="slider-label">
+        <span>Bright</span>
+        <span id="percent">0%</span>
+        <span>Out</span>
+      </div>
+
+      <input
+        id="slider"
+        class="slider"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+      >
+
+    </div>
+  </div>
+</section>
+
+
+<!-- AFTER CAKE -->
+<section id="afterCake" class="page">
+  <div class="page-inner">
+    <div class="card" style="position:relative">
+
+      <div class="teddy"></div>
+
+      <div class="eyebrow">CANDLES DEFEATED</div>
+
+      <h1 class="final-title">AYEEE!</h1>
+
+      <div class="copy">
+        You actually blew them out.
+      </div>
+
+      <div class="copy">
+        I hope you wished for something good, meri baccha.
+      </div>
+
+      <div class="copy">
+        I'm not telling you whether the drone caught it. 👀
+      </div>
+
+      <button class="btn" onclick="showPage('gift')">
+        Show me my gift ♡
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- GIFT -->
+<section id="gift" class="page">
+  <div class="page-inner">
+
+    <div class="card" style="position:relative">
+
+      <div class="teddy"></div>
+
+      <div class="eyebrow">
+        YOUR EXTREMELY EXPENSIVE PRESENT
+      </div>
+
+      <h2 style="color:#b52263;font-size:clamp(32px,8vw,52px)">
+        I got you flowers...
+      </h2>
+
+      <div class="gifts">
+
+        <div class="sunflower">
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="flower-center"></div>
+          <div class="stem"></div>
+        </div>
+
+        <div class="kitkat">
+          <div class="kitkat-title">KITKAT</div>
+          <div class="kitkat-bars">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copy">
+        And a KitKat because apparently flowers aren't edible.
+      </div>
+
+      <div class="copy" style="font-size:15px">
+        For the real delivery, please provide your address,
+        phone number, Aadhaar, blood group, bank details,
+        and your mother's maiden name.
+      </div>
+
+      <p style="font-size:13px;color:#a16f83">
+        (This website is a scam. The flowers are imaginary.)
+      </p>
+
+      <button class="btn" onclick="showPage('letter')">
+        Open your letter ♡
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- LETTER -->
+<section id="letter" class="page">
+  <div class="page-inner">
+
+    <div class="letter">
+
+      <div class="teddy"></div>
+
+      <div class="eyebrow">
+        FOR MY RITUMONNNN
+      </div>
+
+      <h2>Happy birthday, meri ba
